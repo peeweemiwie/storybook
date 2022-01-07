@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Color, ColorTheme, Shadow } from '../shared/variables';
+import { themeArray } from '../shared/arrays';
 
 export const Btn = styled.button`
 	border: 1px solid transparent;
@@ -29,6 +30,7 @@ const Sizes = {
 		fontSize: '1.2rem',
 	},
 };
+export const SizeArray = Object.keys(Sizes);
 
 const borderRadiusDefault = 8;
 const BorderRadius = {
@@ -39,6 +41,7 @@ const BorderRadius = {
 	xl: borderRadiusDefault * 4 + 'px',
 	round: '50%',
 };
+export const BorderRadiusArray = Object.keys(BorderRadius);
 
 export const BtnDefault = ({ label, theme, size, radius, ...props }) => {
 	const bgColor = ColorTheme[theme];
@@ -95,16 +98,9 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 };
 
 BtnDefault.propTypes = {
-	theme: PropTypes.oneOf([
-		'primary',
-		'secondary',
-		'success',
-		'danger',
-		'warning',
-		'accent',
-	]),
-	size: PropTypes.oneOf(['sm', 'md', 'lg']),
+	theme: PropTypes.oneOf(themeArray),
+	size: PropTypes.oneOf(SizeArray),
 	label: PropTypes.string.isRequired,
-	radius: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', 'round']),
+	radius: PropTypes.oneOf(BorderRadiusArray),
 	onClick: PropTypes.func,
 };
