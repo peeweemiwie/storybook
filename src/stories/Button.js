@@ -95,7 +95,6 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 };
 
 BtnDefault.propTypes = {
-	label: PropTypes.string,
 	theme: PropTypes.oneOf([
 		'primary',
 		'secondary',
