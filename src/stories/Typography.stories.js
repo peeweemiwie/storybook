@@ -1,10 +1,9 @@
-import { ColorTheme, ColorDark, ColorLight } from '../shared/variables';
 import {
 	AppTitle,
 	PageTitle,
 	GroupTitle,
 	GroupTitleMinor,
-	Paragraph,
+	P,
 } from '../shared/typography';
 
 export const Typography = () => {
@@ -16,7 +15,7 @@ export const Typography = () => {
 			<GroupTitleMinor>
 				GroupTitleMinor: Fox jumped over the lazy dog
 			</GroupTitleMinor>
-			<Paragraph>Paragraph: Fox jumped over the lazy dog</Paragraph>
+			<P>P: Fox jumped over the lazy dog</P>
 		</div>
 	);
 };

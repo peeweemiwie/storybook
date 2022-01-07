@@ -26,7 +26,7 @@ export const GroupTitleMinor = styled.h4`
 	font-weight: 300;
 `;
 
-export const Paragraph = styled.p`
+export const P = styled.p`
 	font-family: ${roboto};
 	font-size: 1rem;
 	font-weight: 200;
