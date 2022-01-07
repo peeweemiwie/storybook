@@ -3,7 +3,7 @@ import { BtnOutline } from './Button';
 import { themeArray } from '../shared/arrays';
 export const ButtonOutline = () => {
 	return (
-		<Flex colgap='.5rem'>
+		<Flex colgap='.5rem' rowgap='.5rem'>
 			{themeArray.map((theme, index) => (
 				<BtnOutline
 					theme={theme}
