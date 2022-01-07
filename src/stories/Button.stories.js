@@ -1,4 +1,5 @@
-import { BtnDefault } from './Button';
+import { BtnDefault, SizeArray, BorderRadiusArray } from './Button';
+import { themeArray } from '../shared/arrays';
 
 export default {
 	title: 'UI/Buttons/Button',
@@ -6,22 +7,15 @@ export default {
 	argTypes: {
 		theme: {
 			control: { type: 'inline-radio' },
-			options: [
-				'primary',
-				'secondary',
-				'success',
-				'danger',
-				'warning',
-				'accent',
-			],
+			options: themeArray,
 		},
 		size: {
 			control: { type: 'inline-radio' },
-			options: ['sm', 'md', 'lg'],
+			options: SizeArray,
 		},
 		radius: {
 			control: { type: 'inline-radio' },
-			options: ['none', 'sm', 'md', 'lg', 'xl', 'round'],
+			options: BorderRadiusArray,
 		},
 	},
 };
