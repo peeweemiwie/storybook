@@ -8,6 +8,7 @@ import {
 	MdArrowDropUp,
 	MdOutlineAdd,
 } from 'react-icons/md';
+import { themeArray } from '../shared/arrays';
 
 export const Btn = styled.button`
 	align-items: center;
@@ -41,6 +42,7 @@ export const Sizes = {
 		fontSize: '1.2rem',
 	},
 };
+export const SizeArray = Object.keys(Sizes);
 
 const borderRadiusDefault = 8;
 export const BorderRadius = {
@@ -51,6 +53,7 @@ export const BorderRadius = {
 	xl: borderRadiusDefault * 4 + 'px',
 	round: '50%',
 };
+export const BorderRadiusArray = Object.keys(BorderRadius);
 
 export const Icons = {
 	none: null,
@@ -138,17 +141,10 @@ export const BtnIcon = ({ label, theme, size, radius, icon, ...props }) => {
 
 BtnDefault.propTypes = {
 	label: PropTypes.string,
-	theme: PropTypes.oneOf([
-		'primary',
-		'secondary',
-		'success',
-		'danger',
-		'warning',
-		'accent',
-	]),
-	size: PropTypes.oneOf(['sm', 'md', 'lg']),
+	theme: PropTypes.oneOf(themeArray),
+	size: PropTypes.oneOf(SizeArray),
 	label: PropTypes.string.isRequired,
-	radius: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', 'round']),
+	radius: PropTypes.oneOf(BorderRadiusArray),
 	icon: PropTypes.oneOf(IconArray),
 	onClick: PropTypes.func,
 };
