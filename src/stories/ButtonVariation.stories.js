@@ -40,11 +40,35 @@ export const ButtonVariation = () => {
 				/>
 				<BtnDefault theme='primary' label='r' size='md' radius='round' />
 			</Flex>
+			<GroupTitle>Icons</GroupTitle>
+			<Flex colgap='.5rem'>
+				<BtnDefault
+					theme='primary'
+					label='Contact us'
+					size='sm'
+					radius='sm'
+					icon='mail'
+				/>
+				<BtnDefault
+					theme='accent'
+					label='Add'
+					size='md'
+					radius='sm'
+					icon='add'
+				/>
+				<BtnDefault
+					theme='secondary'
+					label='close'
+					size='lg'
+					radius='xl'
+					icon='close'
+				/>
+			</Flex>
 		</div>
 	);
 };
 
 export default {
-	title: 'UI/Buttons/Variation',
+	title: 'Component/Buttons/Variation',
 	component: ButtonVariation,
 };

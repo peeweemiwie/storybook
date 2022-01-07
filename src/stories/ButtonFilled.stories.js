@@ -18,6 +18,6 @@ export const ButtonFilled = () => {
 };
 
 export default {
-	title: 'UI/Buttons/Filled',
+	title: 'Component/Buttons/Filled',
 	component: ButtonFilled,
 };

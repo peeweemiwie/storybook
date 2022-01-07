@@ -18,6 +18,6 @@ export const ButtonOutline = () => {
 };
 
 export default {
-	title: 'UI/Buttons/Outline',
+	title: 'Component/Buttons/Outline',
 	component: ButtonOutline,
 };

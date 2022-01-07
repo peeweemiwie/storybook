@@ -1,14 +1,23 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Color, ColorTheme, Shadow } from '../shared/variables';
+import {
+	MdMailOutline,
+	MdClose,
+	MdArrowDropDown,
+	MdArrowDropUp,
+	MdOutlineAdd,
+} from 'react-icons/md';
 
 export const Btn = styled.button`
+	align-items: center;
 	border: 1px solid transparent;
 	border-color: ${({ borderColor }) => borderColor || 'transparent'};
 	border-radius: ${({ borderRadius }) => borderRadius || 0};
 	background-color: ${({ bgColor }) => bgColor || 'transparent'};
 	color: ${({ color }) => color || Color.white};
 	cursor: pointer;
+	display: flex;
 	font-size: ${({ fontSize }) => fontSize || '1.2rem'};
 	padding: 0.5em 1em;
 	transition: transform 200ms ease-in;
@@ -16,9 +25,12 @@ export const Btn = styled.button`
 		box-shadow: ${Shadow.shadow1};
 		transform: scale(1.05);
 	}
+	svg {
+		margin-left: 0.5em;
+	}
 `;
 
-const Sizes = {
+export const Sizes = {
 	sm: {
 		fontSize: '0.8rem',
 	},
@@ -31,7 +43,7 @@ const Sizes = {
 };
 
 const borderRadiusDefault = 8;
-const BorderRadius = {
+export const BorderRadius = {
 	none: 0,
 	sm: borderRadiusDefault * 1 + 'px',
 	md: borderRadiusDefault * 2 + 'px',
@@ -40,11 +52,21 @@ const BorderRadius = {
 	round: '50%',
 };
 
-export const BtnDefault = ({ label, theme, size, radius, ...props }) => {
+export const Icons = {
+	none: null,
+	mail: <MdMailOutline />,
+	close: <MdClose />,
+	arrowUp: <MdArrowDropUp />,
+	arrowDown: <MdArrowDropDown />,
+	add: <MdOutlineAdd />,
+};
+export const IconArray = Object.keys(Icons);
+
+export const BtnDefault = ({ label, theme, size, radius, icon, ...props }) => {
 	const bgColor = ColorTheme[theme];
 	const fontSize = Sizes[size].fontSize;
 	const borderRadius = BorderRadius[radius];
-	console.log(borderRadius);
+	const selectedIcon = Icons[icon];
 	return (
 		<Btn
 			type='button'
@@ -53,7 +75,7 @@ export const BtnDefault = ({ label, theme, size, radius, ...props }) => {
 			borderRadius={borderRadius}
 			{...props}
 		>
-			{label}
+			{label} {selectedIcon}
 		</Btn>
 	);
 };
@@ -70,6 +92,7 @@ export const BtnOutline = ({ label, theme, size, radius, ...props }) => {
 			color={color}
 			fontSize={fontSize}
 			borderRadius={borderRadius}
+			icon='none'
 			{...props}
 		>
 			{label}
@@ -94,6 +117,25 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 	);
 };
 
+export const BtnIcon = ({ label, theme, size, radius, icon, ...props }) => {
+	const bgColor = ColorTheme[theme];
+	const fontSize = Sizes[size].fontSize;
+	const borderRadius = BorderRadius[radius];
+	const selectedIcon = Icons[icon];
+	return (
+		<Btn
+			type='button'
+			bgColor={bgColor}
+			fontSize={fontSize}
+			borderRadius={borderRadius}
+			{...props}
+		>
+			{label}
+			{selectedIcon}
+		</Btn>
+	);
+};
+
 BtnDefault.propTypes = {
 	label: PropTypes.string,
 	theme: PropTypes.oneOf([
@@ -107,5 +149,6 @@ BtnDefault.propTypes = {
 	size: PropTypes.oneOf(['sm', 'md', 'lg']),
 	label: PropTypes.string.isRequired,
 	radius: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', 'round']),
+	icon: PropTypes.oneOf(IconArray),
 	onClick: PropTypes.func,
 };

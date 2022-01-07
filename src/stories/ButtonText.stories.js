@@ -17,6 +17,6 @@ export const ButtonText = () => {
 };
 
 export default {
-	title: 'UI/Buttons/Text',
+	title: 'Component/Buttons/Text',
 	component: ButtonText,
 };

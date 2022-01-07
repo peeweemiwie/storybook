@@ -1,7 +1,7 @@
 import { BtnDefault } from './Button';
 
 export default {
-	title: 'UI/Buttons/Button',
+	title: 'Component/Buttons/Button',
 	component: BtnDefault,
 	argTypes: {
 		theme: {
@@ -23,6 +23,10 @@ export default {
 			control: { type: 'inline-radio' },
 			options: ['none', 'sm', 'md', 'lg', 'xl', 'round'],
 		},
+		icon: {
+			control: { type: 'inline-radio' },
+			options: ['none', 'mail', 'close', 'arrowUp', 'arrowDown', 'add'],
+		},
 	},
 };
 
@@ -30,7 +34,7 @@ export default {
 const Template = (args) => <BtnDefault {...args} />;
 
 const Default = Template.bind({});
-Default.args = { size: 'md', radius: 'sm' };
+Default.args = { size: 'md', radius: 'sm', icon: 'none' };
 
 export const Primary = Template.bind({});
 Primary.args = { ...Default.args, theme: 'primary', label: 'Primary' };
