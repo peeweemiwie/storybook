@@ -1,25 +1,6 @@
 import { BtnFilled, SizeArray, BorderRadiusArray } from './Button';
 import { themeArray } from '../shared/arrays';
 
-export default {
-	title: 'UI/Buttons/Button',
-	component: BtnFilled,
-	argTypes: {
-		theme: {
-			control: { type: 'inline-radio' },
-			options: themeArray,
-		},
-		size: {
-			control: { type: 'inline-radio' },
-			options: SizeArray,
-		},
-		radius: {
-			control: { type: 'inline-radio' },
-			options: BorderRadiusArray,
-		},
-	},
-};
-
 const Template = (args) => <BtnFilled {...args} />;
 
 const Default = Template.bind({});
@@ -42,3 +23,22 @@ Danger.args = { ...Default.args, theme: 'danger', label: 'Danger' };
 
 export const Accent = Template.bind({});
 Accent.args = { ...Default.args, theme: 'accent', label: 'Accent' };
+
+export default {
+	title: 'UI/Buttons/Button',
+	component: BtnFilled,
+	argTypes: {
+		theme: {
+			control: { type: 'inline-radio' },
+			options: themeArray,
+		},
+		size: {
+			control: { type: 'inline-radio' },
+			options: SizeArray,
+		},
+		radius: {
+			control: { type: 'inline-radio' },
+			options: BorderRadiusArray,
+		},
+	},
+};

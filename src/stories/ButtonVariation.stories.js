@@ -4,7 +4,7 @@ import { GroupTitle } from '../shared/typography';
 import { ColorTheme } from '../shared/variables';
 
 export const ButtonVariation = () => {
-	const { primary, secondary, success, warning, danger, accent } = ColorTheme;
+	const { primary, secondary, success, warning, accent } = ColorTheme;
 	return (
 		<div>
 			<GroupTitle>Sizes</GroupTitle>
