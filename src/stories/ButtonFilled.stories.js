@@ -1,11 +1,11 @@
 import { Flex } from '../shared/wrappers';
-import { BtnDefault } from './Button';
+import { BtnFilled } from './Button';
 import { themeArray } from '../shared/arrays';
 export const ButtonFilled = () => {
 	return (
-		<Flex colgap='.5rem'>
+		<Flex colgap='.5rem' rowgap='.5rem'>
 			{themeArray.map((theme, index) => (
-				<BtnDefault
+				<BtnFilled
 					theme={theme}
 					label={theme.charAt(0).toUpperCase() + theme.slice(1)}
 					size='md'

@@ -1,9 +1,9 @@
-import { BtnDefault, SizeArray, BorderRadiusArray } from './Button';
+import { BtnFilled, SizeArray, BorderRadiusArray } from './Button';
 import { themeArray } from '../shared/arrays';
 
 export default {
 	title: 'UI/Buttons/Button',
-	component: BtnDefault,
+	component: BtnFilled,
 	argTypes: {
 		theme: {
 			control: { type: 'inline-radio' },
@@ -20,8 +20,7 @@ export default {
 	},
 };
 
-//👇 We create a “template” of how args map to rendering
-const Template = (args) => <BtnDefault {...args} />;
+const Template = (args) => <BtnFilled {...args} />;
 
 const Default = Template.bind({});
 Default.args = { size: 'md', radius: 'sm' };

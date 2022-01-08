@@ -19,7 +19,7 @@ export const Btn = styled.button`
 	}
 `;
 
-const Sizes = {
+export const Sizes = {
 	sm: {
 		fontSize: '0.8rem',
 	},
@@ -33,7 +33,7 @@ const Sizes = {
 export const SizeArray = Object.keys(Sizes);
 
 const borderRadiusDefault = 8;
-const BorderRadius = {
+export const BorderRadius = {
 	none: 0,
 	sm: borderRadiusDefault * 1 + 'px',
 	md: borderRadiusDefault * 2 + 'px',
@@ -43,17 +43,14 @@ const BorderRadius = {
 };
 export const BorderRadiusArray = Object.keys(BorderRadius);
 
-export const BtnDefault = ({ label, theme, size, radius, ...props }) => {
-	const bgColor = ColorTheme[theme];
-	const fontSize = Sizes[size].fontSize;
-	const borderRadius = BorderRadius[radius];
-	console.log(borderRadius);
+export const BtnFilled = ({ label, theme, size, radius, ...props }) => {
 	return (
 		<Btn
 			type='button'
-			bgColor={bgColor}
-			fontSize={fontSize}
-			borderRadius={borderRadius}
+			bgColor={ColorTheme[theme]}
+			fontSize={Sizes[size].fontSize}
+			borderRadius={BorderRadius[radius]}
+			label={label}
 			{...props}
 		>
 			{label}
@@ -62,17 +59,14 @@ export const BtnDefault = ({ label, theme, size, radius, ...props }) => {
 };
 
 export const BtnOutline = ({ label, theme, size, radius, ...props }) => {
-	const borderColor = ColorTheme[theme];
-	const color = ColorTheme[theme];
-	const fontSize = Sizes[size].fontSize;
-	const borderRadius = BorderRadius[radius];
 	return (
 		<Btn
 			type='button'
-			borderColor={borderColor}
-			color={color}
-			fontSize={fontSize}
-			borderRadius={borderRadius}
+			borderColor={ColorTheme[theme]}
+			color={ColorTheme[theme]}
+			fontSize={Sizes[size].fontSize}
+			borderRadius={BorderRadius[radius]}
+			label={label}
 			{...props}
 		>
 			{label}
@@ -81,15 +75,13 @@ export const BtnOutline = ({ label, theme, size, radius, ...props }) => {
 };
 
 export const BtnText = ({ label, theme, size, radius, ...props }) => {
-	const color = ColorTheme[theme];
-	const fontSize = Sizes[size].fontSize;
-	const borderRadius = BorderRadius[radius];
 	return (
 		<Btn
 			type='button'
-			color={color}
-			fontSize={fontSize}
-			borderRadius={borderRadius}
+			color={ColorTheme[theme]}
+			fontSize={Sizes[size].fontSize}
+			borderRadius={BorderRadius[radius]}
+			label={label}
 			{...props}
 		>
 			{label}
@@ -97,7 +89,7 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 	);
 };
 
-BtnDefault.propTypes = {
+BtnFilled.propTypes = {
 	theme: PropTypes.oneOf(themeArray),
 	size: PropTypes.oneOf(SizeArray),
 	label: PropTypes.string.isRequired,
