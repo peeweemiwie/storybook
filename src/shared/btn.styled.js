@@ -15,4 +15,12 @@ export const StyledButton = styled.button`
 		box-shadow: ${Shadow.shadow1};
 		transform: scale(1.05);
 	}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+		&:hover {
+			box-shadow: none;
+			transform: none;
+		}
+	}
 `;

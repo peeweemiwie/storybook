@@ -37,31 +37,6 @@ export const ColorAll = {
 	...ColorLight,
 };
 
-////////// buttons //////////
-export const BtnSizes = {
-	sm: {
-		fontSize: '0.8rem',
-	},
-	md: {
-		fontSize: '1rem',
-	},
-	lg: {
-		fontSize: '1.2rem',
-	},
-};
-export const BtnSizeArray = Object.keys(BtnSizes);
-
-const borderRadiusDefault = 8;
-export const BtnBorderRadius = {
-	none: 0,
-	sm: borderRadiusDefault * 1 + 'px',
-	md: borderRadiusDefault * 2 + 'px',
-	lg: borderRadiusDefault * 3 + 'px',
-	xl: borderRadiusDefault * 4 + 'px',
-	round: '50%',
-};
-export const BtnBorderRadiusArray = Object.keys(BtnBorderRadius);
-
 export const Breakpoints = {
 	breakpointSm: '576px',
 	breakpointMd: '768px',

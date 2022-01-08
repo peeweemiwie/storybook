@@ -24,8 +24,16 @@ Danger.args = { ...Default.args, theme: 'danger', label: 'Danger' };
 export const Accent = Template.bind({});
 Accent.args = { ...Default.args, theme: 'accent', label: 'Accent' };
 
+export const PrimaryDisabled = Template.bind({});
+PrimaryDisabled.args = {
+	...Default.args,
+	theme: 'primary',
+	label: 'Primary Disabled',
+	disabled: true,
+};
+
 export default {
-	title: 'UI/Buttons/Button',
+	title: 'UI/Buttons/Button Example',
 	component: BtnFilled,
 	argTypes: {
 		theme: {
@@ -39,6 +47,10 @@ export default {
 		radius: {
 			control: { type: 'inline-radio' },
 			options: BorderRadiusArray,
+		},
+		disabled: {
+			control: { type: 'inline-radio' },
+			options: [true, false],
 		},
 	},
 };
