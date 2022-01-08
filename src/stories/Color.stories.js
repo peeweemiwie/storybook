@@ -1,4 +1,4 @@
-import { StyledColorSwatch, Swatch, ColorName, ColorHex } from '../shared/card';
+import { StyledColorSwatch, Image, P1, P2 } from '../shared/card';
 import { Flex } from '../shared/wrappers';
 import { ColorTheme, ColorDark, ColorLight } from '../shared/variables';
 import { GroupTitle } from '../shared/typography';
@@ -11,9 +11,9 @@ export const ColorSwatch = () => {
 				key={`${key}-${value}`}
 				style={{ borderTop: `10px solid ${value}` }}
 			>
-				<Swatch style={{ backgroundColor: value }}></Swatch>
-				<ColorName>{key}</ColorName>
-				<ColorHex>{value}</ColorHex>
+				<Image style={{ backgroundColor: value }}></Image>
+				<P1>{key}</P1>
+				<P2>{value}</P2>
 			</StyledColorSwatch>,
 		);
 	}
@@ -24,9 +24,9 @@ export const ColorSwatch = () => {
 				key={`${key}-${value}`}
 				style={{ borderTop: `10px solid ${value}` }}
 			>
-				<Swatch style={{ backgroundColor: value }}></Swatch>
-				<ColorName>{key}</ColorName>
-				<ColorHex>{value}</ColorHex>
+				<Image style={{ backgroundColor: value }}></Image>
+				<P1>{key}</P1>
+				<P2>{value}</P2>
 			</StyledColorSwatch>,
 		);
 	}
@@ -37,9 +37,9 @@ export const ColorSwatch = () => {
 				key={`${key}-${value}`}
 				style={{ borderTop: `10px solid ${value}` }}
 			>
-				<Swatch style={{ backgroundColor: value }}></Swatch>
-				<ColorName>{key}</ColorName>
-				<ColorHex>{value}</ColorHex>
+				<Image style={{ backgroundColor: value }}></Image>
+				<P1>{key}</P1>
+				<P2>{value}</P2>
 			</StyledColorSwatch>,
 		);
 	}
@@ -47,11 +47,17 @@ export const ColorSwatch = () => {
 	return (
 		<>
 			<GroupTitle>Theme Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{themeColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{themeColors}
+			</Flex>
 			<GroupTitle>Light Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{lightColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{lightColors}
+			</Flex>
 			<GroupTitle>Dark Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{darkColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{darkColors}
+			</Flex>
 		</>
 	);
 };

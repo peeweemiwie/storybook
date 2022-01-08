@@ -1,25 +1,10 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Color, ColorTheme, Shadow } from '../shared/variables';
-import { themeArray } from '../shared/arrays';
+import { ColorTheme } from '../shared/variables';
+import { themeArray } from '../shared/variables';
+import { StyledButton } from '../shared/btn.styled';
 
-export const Btn = styled.button`
-	border: 1px solid transparent;
-	border-color: ${({ borderColor }) => borderColor || 'transparent'};
-	border-radius: ${({ borderRadius }) => borderRadius || 0};
-	background-color: ${({ bgColor }) => bgColor || 'transparent'};
-	color: ${({ color }) => color || Color.white};
-	cursor: pointer;
-	font-size: ${({ fontSize }) => fontSize || '1.2rem'};
-	padding: 0.5em 1em;
-	transition: transform 200ms ease-in;
-	&:hover {
-		box-shadow: ${Shadow.shadow1};
-		transform: scale(1.05);
-	}
-`;
-
-export const Sizes = {
+////////// variables //////////
+export const BtnSizes = {
 	sm: {
 		fontSize: '0.8rem',
 	},
@@ -30,10 +15,10 @@ export const Sizes = {
 		fontSize: '1.2rem',
 	},
 };
-export const SizeArray = Object.keys(Sizes);
+export const BtnSizeArray = Object.keys(BtnSizes);
 
 const borderRadiusDefault = 8;
-export const BorderRadius = {
+export const BtnBorderRadius = {
 	none: 0,
 	sm: borderRadiusDefault * 1 + 'px',
 	md: borderRadiusDefault * 2 + 'px',
@@ -41,58 +26,61 @@ export const BorderRadius = {
 	xl: borderRadiusDefault * 4 + 'px',
 	round: '50%',
 };
-export const BorderRadiusArray = Object.keys(BorderRadius);
+export const BtnBorderRadiusArray = Object.keys(BtnBorderRadius);
 
-export const BtnFilled = ({ label, theme, size, radius, ...props }) => {
+export const BtnFilled = ({ label, theme, size, radius, icon, ...props }) => {
 	return (
-		<Btn
+		<StyledButton
 			type='button'
 			bgColor={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
+			icon={icon}
 			{...props}
 		>
-			{label}
-		</Btn>
+			{label} {icon}
+		</StyledButton>
 	);
 };
 
 export const BtnOutline = ({ label, theme, size, radius, ...props }) => {
 	return (
-		<Btn
+		<StyledButton
 			type='button'
 			borderColor={ColorTheme[theme]}
 			color={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
 			{...props}
 		>
 			{label}
-		</Btn>
+		</StyledButton>
 	);
 };
 
-export const BtnText = ({ label, theme, size, radius, ...props }) => {
+export const BtnText = ({ label, theme, size, radius, bool, ...props }) => {
 	return (
-		<Btn
+		<StyledButton
 			type='button'
 			color={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
+			disabled={bool}
 			{...props}
 		>
 			{label}
-		</Btn>
+		</StyledButton>
 	);
 };
 
 BtnFilled.propTypes = {
 	theme: PropTypes.oneOf(themeArray),
-	size: PropTypes.oneOf(SizeArray),
+	size: PropTypes.oneOf(BtnSizeArray),
 	label: PropTypes.string.isRequired,
-	radius: PropTypes.oneOf(BorderRadiusArray),
+	radius: PropTypes.oneOf(BtnBorderRadiusArray),
+	disabled: PropTypes.bool,
 	onClick: PropTypes.func,
 };
