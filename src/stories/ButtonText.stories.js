@@ -1,6 +1,6 @@
 import { Flex } from '../shared/wrappers';
 import { BtnText } from './Button';
-import { themeArray } from '../shared/arrays';
+import { themeArray } from '../shared/variables';
 export const ButtonText = () => {
 	return (
 		<Flex colgap='.5rem'>

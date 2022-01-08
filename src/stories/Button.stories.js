@@ -1,5 +1,5 @@
 import { BtnFilled, SizeArray, BorderRadiusArray } from './Button';
-import { themeArray } from '../shared/arrays';
+import { themeArray } from '../shared/variables';
 
 const Template = (args) => <BtnFilled {...args} />;
 

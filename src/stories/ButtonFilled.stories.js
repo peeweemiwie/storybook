@@ -1,6 +1,6 @@
 import { Flex } from '../shared/wrappers';
 import { BtnFilled } from './Button';
-import { themeArray } from '../shared/arrays';
+import { themeArray } from '../shared/variables';
 export const ButtonFilled = () => {
 	return (
 		<Flex colgap='.5rem' rowgap='.5rem'>

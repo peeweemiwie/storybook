@@ -47,11 +47,17 @@ export const ColorSwatch = () => {
 	return (
 		<>
 			<GroupTitle>Theme Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{themeColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{themeColors}
+			</Flex>
 			<GroupTitle>Light Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{lightColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{lightColors}
+			</Flex>
 			<GroupTitle>Dark Colors</GroupTitle>
-			<Flex colgap='0.5rem'>{darkColors}</Flex>
+			<Flex colgap='0.5rem' rowgap='0.5rem'>
+				{darkColors}
+			</Flex>
 		</>
 	);
 };

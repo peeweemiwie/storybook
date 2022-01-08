@@ -1,39 +1,21 @@
 import PropTypes from 'prop-types';
 import { ColorTheme } from '../shared/variables';
-import { themeArray } from '../shared/arrays';
+import { themeArray } from '../shared/variables';
 import { StyledButton } from '../shared/btn.styled';
-
-export const Sizes = {
-	sm: {
-		fontSize: '0.8rem',
-	},
-	md: {
-		fontSize: '1rem',
-	},
-	lg: {
-		fontSize: '1.2rem',
-	},
-};
-export const SizeArray = Object.keys(Sizes);
-
-const borderRadiusDefault = 8;
-export const BorderRadius = {
-	none: 0,
-	sm: borderRadiusDefault * 1 + 'px',
-	md: borderRadiusDefault * 2 + 'px',
-	lg: borderRadiusDefault * 3 + 'px',
-	xl: borderRadiusDefault * 4 + 'px',
-	round: '50%',
-};
-export const BorderRadiusArray = Object.keys(BorderRadius);
+import {
+	BtnSizes,
+	BtnSizeArray,
+	BtnBorderRadius,
+	BtnBorderRadiusArray,
+} from '../shared/variables';
 
 export const BtnFilled = ({ label, theme, size, radius, ...props }) => {
 	return (
 		<StyledButton
 			type='button'
 			bgColor={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
 			{...props}
 		>
@@ -48,8 +30,8 @@ export const BtnOutline = ({ label, theme, size, radius, ...props }) => {
 			type='button'
 			borderColor={ColorTheme[theme]}
 			color={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
 			{...props}
 		>
@@ -63,8 +45,8 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 		<StyledButton
 			type='button'
 			color={ColorTheme[theme]}
-			fontSize={Sizes[size].fontSize}
-			borderRadius={BorderRadius[radius]}
+			fontSize={BtnSizes[size].fontSize}
+			borderRadius={BtnBorderRadius[radius]}
 			label={label}
 			{...props}
 		>
@@ -75,8 +57,8 @@ export const BtnText = ({ label, theme, size, radius, ...props }) => {
 
 BtnFilled.propTypes = {
 	theme: PropTypes.oneOf(themeArray),
-	size: PropTypes.oneOf(SizeArray),
+	size: PropTypes.oneOf(BtnSizeArray),
 	label: PropTypes.string.isRequired,
-	radius: PropTypes.oneOf(BorderRadiusArray),
+	radius: PropTypes.oneOf(BtnBorderRadiusArray),
 	onClick: PropTypes.func,
 };
