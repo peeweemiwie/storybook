@@ -1,13 +1,13 @@
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
 import {
-	DefaultIcon,
+	Icon,
 	IconColorArray,
 	IconSizesArray,
 	IconNameArray,
 } from '../shared/icons';
 import PropTypes from 'prop-types';
 
-const Template = (args) => <DefaultIcon {...args} />;
+const Template = (args) => <Icon {...args} />;
 export const PrimaryFavoriteMd = Template.bind({});
 PrimaryFavoriteMd.args = { color: 'primary', icon: 'MdFavorite', size: 'md' };
 
@@ -25,15 +25,9 @@ SuccessCheckSm.args = {
 	size: 'sm',
 };
 
-DefaultIcon.propsTypes = {
-	color: PropTypes.oneOf(IconColorArray),
-	size: PropTypes.oneOf(IconSizesArray),
-	icon: PropTypes.oneOf(IconNameArray),
-};
-
 export default {
 	title: 'Icons/Icon Example',
-	component: DefaultIcon,
+	component: Icon,
 	argTypes: {
 		color: {
 			control: { type: 'inline-radio' },
