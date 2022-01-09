@@ -68,7 +68,7 @@ export const IconContainer = styled.span`
 	font-size: ${({ size }) => size || '1rem'};
 `;
 
-export const DefaultIcon = ({ size, color, icon, ...props }) => {
+export const Icon = ({ size, color, icon, ...props }) => {
 	const iconIndex = IconNameArray.indexOf(icon);
 	return (
 		<IconContainer size={IconSizes[size]} color={IconColor[color]} {...props}>
@@ -77,7 +77,7 @@ export const DefaultIcon = ({ size, color, icon, ...props }) => {
 	);
 };
 
-DefaultIcon.propsTypes = {
+Icon.propsTypes = {
 	color: PropTypes.oneOf(IconColorArray),
 	size: PropTypes.oneOf(IconSizesArray),
 	icon: PropTypes.oneOf(IconNameArray),
